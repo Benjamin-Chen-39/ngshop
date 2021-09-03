@@ -32,10 +32,10 @@ describe("AppComponent", () => {
   });
 
   it("should display the dogs", () => {
-    expect(element.querySelector("#dogDisplay")).not.toBeNull();
+    expect(element.querySelector("#dogsDisplay")).not.toBeNull();
   });
 
-  it("should add favorite to list", () => {
+  it("should add favorite to list of favorites", () => {
     let testDog = new Dog();
     component.updateFavs(testDog);
     expect(component.favorites.length).toEqual(1);

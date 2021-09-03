@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { LikeCounterComponent } from './like-counter/like-counter.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LikeCounterComponent
   ],
   imports: [
     BrowserModule,

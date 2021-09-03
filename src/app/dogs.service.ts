@@ -26,4 +26,14 @@ export class DogsService {
   updateFavs(myFavs: Dog[], newFav: Dog) {
     myFavs.push(newFav);
   }
+
+  updateLikes(value: number, dogId: string) {
+    value += 1;
+    if (localStorage.dogId) {
+      localStorage.dogId = Number(localStorage.dogId) + 1;
+    } else {
+      localStorage.dogId = 1;
+    }
+    console.log("total # of likes: ", Number(localStorage.dogId));
+  }
 }

@@ -1,3 +1,5 @@
+<div>Total likes: {{ myLikes }}</div>
+
 <div>
   My favorite dogs:
   <div *ngFor="let fav of favorites">
@@ -15,11 +17,13 @@
   />
 </div>
 
-<div id="dogDisplay" *ngFor="let dog of dogs">
+<div id="dogsDisplay" *ngFor="let dog of dogs">
   <div class="dog">
     <div class="dogName">{{ dog.name }}</div>
     <div class="dogImage"><img src="{{ dog.image }}" /></div>
-    <button class="likeButton">Like!</button>
+    <div class="likeDisplay">
+      <app-like-counter [dogId]="dog.id"></app-like-counter>
+    </div>
     <button class="favButton" (click)="updateFavs(dog)">Favorite!</button>
     <!-- <div class="dogThumbnail"><img src='{{ dog.thumbnail }}' /></div> -->
   </div>
