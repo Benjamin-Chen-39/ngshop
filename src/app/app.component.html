@@ -1,10 +1,26 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="600" alt="Gnarly Bull Dog" src="../assets/images/gnarly-bully.jpg">
+<div>
+  My favorite dogs:
+  <div *ngFor="let fav of favorites">
+    {{ fav.name }}
+  </div>
 </div>
 
-<h2>You can delete the contents of this file.</h2>
-<h3><a href="https://github.com/gSchool/ngshop">Instructions Here</a></h3>
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align: center">
+  <h1>Welcome to {{ title }}!</h1>
+  <img
+    width="600"
+    alt="Gnarly Bull Dog"
+    src="../assets/images/gnarly-bully.jpg"
+  />
+</div>
+
+<div id="dogDisplay" *ngFor="let dog of dogs">
+  <div class="dog">
+    <div class="dogName">{{ dog.name }}</div>
+    <div class="dogImage"><img src="{{ dog.image }}" /></div>
+    <button class="likeButton">Like!</button>
+    <button class="favButton" (click)="updateFavs(dog)">Favorite!</button>
+    <!-- <div class="dogThumbnail"><img src='{{ dog.thumbnail }}' /></div> -->
+  </div>
+</div>
